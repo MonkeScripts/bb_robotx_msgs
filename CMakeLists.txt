@@ -9,39 +9,19 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 set(message_files
-  msg/BasicGPS.msg
   msg/BeaconState.msg
-  msg/LightSequence.msg
-  msg/SearchAndReport.msg
-  msg/Wildlife.msg
-  msg/WildlifePoses.msg
-  msg/WildlifeSequence.msg
-  msg/RobotxTaskStatus.msg
-  msg/GateInfo.msg
-  msg/GateStatuses.msg
-  msg/PathDirection.msg
   msg/IncidentZoneStatus.msg
   msg/IncidentZoneReport.msg
 )
 
 set(service_files
   srv/ClearIncident.srv
-  srv/RobotxTaskStatusUpdate.srv
-  srv/SetWildlifeStatus.srv
-  srv/SetSearchAndReportStatus.srv
-  srv/SetCardTopic.srv
-  srv/ConfigureGateTask.srv
-  srv/ConfigureWildlifeTask.srv
-  srv/ComputeCompletion.srv
-  srv/ConfigureLightSequenceTask.srv
-  srv/ConfigurePathTask.srv
   srv/SpawnIncident.srv
   srv/DockLedChoice.srv
   srv/PipeLedChoice.srv
@@ -67,7 +47,7 @@ if(BUILD_TESTING)
     ${service_files}
     ${action_files}
 
-    DEPENDENCIES builtin_interfaces std_msgs geometry_msgs # action_msgs
+    DEPENDENCIES builtin_interfaces geometry_msgs # action_msgs
     ADD_LINTER_TESTS
   )
 endif()

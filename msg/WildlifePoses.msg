@@ -1,4 +1,0 @@
-
-geometry_msgs/PoseStamped python
-geometry_msgs/PoseStamped iguana
-geometry_msgs/PoseStamped manatee

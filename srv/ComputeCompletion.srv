@@ -1,4 +1,0 @@
-bool active
-geometry_msgs/PoseStamped[] poses
----
-bool success
